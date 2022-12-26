@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
-const core = require('@actions/core');
-const github = require('@actions/github');
+import core from '@actions/core';
+import github from '@actions/github';
 
 async function run() {
     try {
