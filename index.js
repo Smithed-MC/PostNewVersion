@@ -21,7 +21,7 @@ async function run() {
                     breaking: true,
                     downloads: {
                         datapack: datapack,
-                        resourcepack: resourcepack
+                        resourcepack: resourcepack ?? undefined
                     },
                     supports: [supports],
                     dependencies: [dependencies !== undefined ? dependencies.map(d => { const [pack, version] = d.split('@'); return { id: pack, version: version }; }) : []]
