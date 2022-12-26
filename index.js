@@ -26,7 +26,7 @@ async function run() {
                     name: version,
                     breaking: true,
                     downloads: downloads,
-                    supports: [supports],
+                    supports: supports,
                     dependencies: [dependencies !== undefined ? dependencies.map(d => { const [pack, version] = d.split('@'); return { id: pack, version: version }; }) : []]
                 }
             })
