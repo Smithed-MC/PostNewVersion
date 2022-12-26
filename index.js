@@ -32,10 +32,9 @@ async function run() {
             })
         })
 
-        const statusCode = response.statusCode
-        console.log(statusCode)
-        if (statusCode !== 200)
-            core.setFailed(await response.text())
+        if (!response.ok)
+            return core.setFailed(await response.text())
+        console.log(await response.text())
     } catch (error) {
         core.setFailed(error.message);
     }
