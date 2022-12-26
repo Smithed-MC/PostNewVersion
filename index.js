@@ -30,7 +30,7 @@ async function run() {
         const statusCode = response.message.statusCode
         console.log(statusCode)
         if(statusCode !== 200)
-            core.setFailed(response.message.statusMessage)
+            core.setFailed(await response.readBody())
     } catch (error) {
         core.setFailed(error.message);
     }
