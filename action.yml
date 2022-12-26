@@ -1,0 +1,30 @@
+name: 'Post New Version'
+description: 'Post a new version to Smithed via the API'
+inputs:
+  uid:
+    description: 'UID of your account'
+    required: true
+  pack:
+    description: 'Pack ID'
+    required: true
+  version:  # id of input
+    description: 'Version number, must be valid semver'
+    required: true
+  datapack:
+    description: 'Url to the datapack download'
+    required: true
+  resourcepack:
+    description: 'Url to the resourcepack download'
+    required: false
+  supports:
+    description: 'List of Minecraft versions supported'
+    required: true
+  dependencies:
+    description: 'List of dependencies in <owner>:<id>@<version> format'
+    required: false
+  token:
+    description: 'Valid Smithed PAT'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
