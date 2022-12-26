@@ -14,7 +14,6 @@ async function run() {
         const dependencies = core.getMultilineInput('dependencies');
         const token = core.getInput('token', { required: true });
 
-        const client = new http.HttpClient()
         const response = await fetch(`https://api.smithed.dev/addUserPackVersion?uid=${uid}&pack=${pack}&version=${version}&token=${token}`, {
             method: 'POST', body: JSON.stringify({
                 data: {
