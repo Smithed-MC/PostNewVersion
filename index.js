@@ -28,6 +28,7 @@ async function run() {
         }))
 
         const statusCode = response.message.statusCode
+        console.log(statusCode)
         if(statusCode !== 200)
             core.setFailed(response.message.statusMessage)
     } catch (error) {
