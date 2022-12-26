@@ -15,7 +15,7 @@ async function run() {
         const token = core.getInput('token', { required: true });
 
         const response = await fetch(`https://api.smithed.dev/addUserPackVersion?uid=${uid}&pack=${pack}&version=${version}&token=${token}`, {
-            method: 'POST', body: JSON.stringify({
+            method: 'POST', headers: { "Content-Type": "application/json" }, body: JSON.stringify({
                 data: {
                     name: version,
                     breaking: true,
